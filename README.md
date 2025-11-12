@@ -35,14 +35,16 @@ CREATE TABLE books (
     available BOOLEAN
 );
 
+
 Patrons Table
 
 CREATE TABLE patrons (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100),
     email VARCHAR(100) UNIQUE,
-    borrowed_books INT[]  -- References books(id), but no enforced FK constraint
+    borrowed_books INT[]
 );
+
 
 ✅ Sprint 2: Insert Data
 Insert Sample Data into Authors
@@ -168,6 +170,7 @@ SELECT * FROM authors WHERE name ILIKE '%George%';
 
 UPDATE books SET published_year = published_year + 1
 WHERE published_year = 1869;
+
 
 
 
